@@ -1,0 +1,186 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: rgba(0, 0, 0, 0);
+}
+.hd{
+	background-color: #5fbd48;
+	width: 100%;
+	height: 64px;
+	position: fixed;
+	top: 0px;
+}
+.hd_cont{
+	font-size: 20px;
+	line-height: 64px;
+	color: white;
+	font-weight:bold;
+	margin-left:20px;
+	letter-spacing: 0.2em;
+}
+.box{
+	width: 300px;
+	height: 200px;
+	padding: 0 20px;
+	/* border: 2px solid #2f0000; */
+	border-radius: 15px;
+	margin: 200px auto;
+	background-color: rgb(255, 255, 255);
+	box-shadow:2px 2px 10px #909090;
+}
+.tit{
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	color: black;
+	position: relative;
+	top: 20px;
+	color: #5fbd48;
+}
+.inp{
+	margin-top: 40px;
+	margin-left: 50px;
+	width: 100%;
+	height: 40px;
+	text-indent: 10px;
+	color: grey;
+}
+.notice{
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: red;
+}
+#btn{
+	display: none;
+}
+#btn1{
+	background-color:#5fbd48; 
+	padding: 10px 30px;
+	border-radius: 20px;
+	margin: 0 auto;
+	position: relative;
+	left: 84px;
+	top: 30px;
+	color: white;
+}
+.btm{
+	background-color:#5fbd48; 
+	padding: 10px 30px;
+	border-radius: 25px;
+	border: 0px;
+	margin: 0 auto;
+	position: relative;
+	left: 84px;
+	top: 60px;
+	font-size: 16px;
+	color: white;
+}
+#btm{
+	background-color:#5fbd48; 
+	padding: 10px 30px;
+	border-radius: 25px;
+	border: 0px;
+	margin: 0 auto;
+	position: relative;
+	left: 84px;
+	top: 60px;
+	font-size: 16px;
+	color: white;
+}
+#pre{
+	position: absolute;
+	top:150px;
+	left: 50px;
+	width: 300px;
+	height: 300px;
+	/* border: 1px solid black; */
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow:2px 2px 10px #909090;
+}
+#f1{
+	position: absolute;
+	top:480px;
+	left: 50px;
+	width:300px;
+	text-align:center;
+	line-height:64px;
+	color: #5fbd48;
+}
+#bef{
+	top:150px;
+	right: 50px;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	/* border: 1px solid black; */
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow:2px 2px 10px #909090;
+}
+#video{
+    top:600px;
+}
+#f2{
+	top:480px;
+	right: 50px;
+	position: absolute;
+	width:300px;
+	text-align:center;
+	line-height:64px;
+	color: #5fbd48;
+}
+
+.subheader .top,
+.subheader .buy {
+display: none;
+}
+
+.subheader .bot {
+margin-top: 10px;
+}
+
+.subheader .download {
+width: auto;
+border-radius: 21px;
+background-position: 30px 9px;
+padding: 0 35px 0 65px;
+color: #fff;
+font-size: 16px;
+line-height: 42px;
+}
+
+.subheader .download:hover {
+text-decoration: none;
+}
+
+.subheader .download::before {
+content: '马上下载';
+}
+
+.footer>.wrapper {
+padding-top: 0;
+}
+
+@media (min-width: 769px) {
+.header .wrapper {
+justify-content: flex-end;
+}
+.header .logo {
+background-image: url("//qncdn.aoscdn.com/img/logo/wangxu.svg");
+background-size: auto 100%;
+background-repeat: no-repeat;
+width: 240px;
+line-height: 40px;
+padding-left: 55px;
+color: #666;
+}
+
+.black-header .logo,
+.transparent-header .logo {
+color: #ccc;
+}

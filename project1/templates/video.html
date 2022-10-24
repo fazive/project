@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频检测</title>
+	<link href="/static/css/upload.css" rel="stylesheet" type="text/css" />
+</head>
+<body background-color="yellow">
+	<div class="subheader" style="display: block; width:100%;height:60px;background-color:#000;position:fixed;top:0;left:0;padding-right:20px;padding-left:20px;padding-top:12px">
+    <div class="wrapper" style="max-width: unset;width: auto;display:block">
+        <div class="logo" title="返回顶部" style="padding-left: 55px;float: left;height: 42px;background-size: auto 41px; padding-left: 51px;background-position: left center;background-repeat: no-repeat; cursor: pointer;;line-height: 38px;font-size: 22px;position: relative; color: #fff;">
+            <b style="display:inline;font-weight: bold;">AI图片检测</b>
+        </div>
+
+        <div class="offer" itemprop="offers" itemtype="/except/" style="display:block;float:right;width:220px;height:40px;background-color:#56c040;margin-right:50px;border-radius: 25px;text-align: center;">
+            <a id="download1"  href="/except/" rel="nofollow" style="height: 36px;line-height: 36px;width: auto;min-width: 178px;text-align: center;color: white;padding: 0 40px;font-size: 16px;background-position: 30px;background: none;text-decoration: none;margin-left: 15px;">清除文件</a>
+            <!-- <a class="buy" itemprop="url" href="/store/watermark-remover.html" rel="nofollow">马上购买</a> -->
+        </div>
+    </div>
+</div>
+	<div class="box">
+		<p class="tit">视频检测</p>
+		<form action="" method=post enctype=multipart/form-data>
+		<p><input type=file placeholder="请上传视频" name=file id="btn">
+			<label for="btn" id="btn1">上传文件</label><br/>
+		<input class = "btm" type=submit value="开始检测">
+		</form>
+	</div>
+	<div id="bef">
+	</div>
+	<p id="f2">检测后</p>
+</body>
+<script>
+	var btn = document.getElementById("btn");
+	var btm = document.getElementById('btm');
+	var pre = document.getElementById('pre');
+	var bef = document.getElementById('bef');
+	var vid = document.getElementById('vid');
+
+
+	var img ;
+	img = "{{ img }}";
+	console.log(img)
+	img=img.replace(/\[|]/g,'');
+	img=img.replace(/\&#39;/g,"");
+	img=img.replace(/\\/g,"/");
+	img=img.split(",");
+	let imgStr = '';
+	function CheckImg1Exists(imgurl) {
+        return new Promise(function(resolve, reject) {
+          var ImgObj = new Image(); //判断图片是否存在
+          ImgObj.src = imgurl;
+          ImgObj.onload = function(res) {
+			imgStr = `<img src="${imgurl}" alt="" width="300px">`;
+            bef.innerHTML = imgStr;
+            resolve(res);
+          }
+          ImgObj.onerror = function(err) {
+            reject(err)
+          }
+        })
+      }
+
+	 for (var i=0;i<img.length;i++){
+	 	img[i] = img[i].replace(".","")
+	 	console.log(img[i])
+	    CheckImg1Exists(img[i]);
+	 }
+
+!
+function() {
+	    function n(n, e, t) {
+	        return n.getAttribute(e) || t
+	    }
+	    function e(n) {
+	        return document.getElementsByTagName(n)
+	    }
+	    function t() {
+	        var t = e("script"),
+	        o = t.length,
+	        i = t[o - 1];
+	        return {
+	            l: o,
+	            z: n(i, "zIndex", -1),
+	            o: n(i, "opacity", .5),
+	            c: n(i, "color", "0,0,0"),
+	            n: n(i, "count", 99)
+	        }
+	    }
+	    function o() {
+	        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+	        c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+	    }
+	    function i() {
+	        r.clearRect(0, 0, a, c);
+	        var n, e, t, o, m, l;
+	        s.forEach(function(i, x) {
+	            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+	            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+	        }),
+	        x(i)
+	    }
+	    var a, c, u, m = document.createElement("canvas"),
+	    d = t(),
+	    l = "c_n" + d.l,
+	    r = m.getContext("2d"),
+	    x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+	    function(n) {
+	        window.setTimeout(n, 1e3 / 45)
+	    },
+	    w = Math.random,
+	    y = {
+	        x: null,
+	        y: null,
+	        max: 2e4
+	    };
+	    m.id = l,
+	    m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o,
+	    e("body")[0].appendChild(m),
+	    o(),
+	    window.onresize = o,
+	    window.onmousemove = function(n) {
+	        n = n || window.event,
+	        y.x = n.clientX,
+	        y.y = n.clientY
+	    },
+	    window.onmouseout = function() {
+	        y.x = null,
+	        y.y = null
+	    };
+	    for (var s = [], f = 0; d.n > f; f++) {
+	        var h = w() * a,
+	        g = w() * c,
+	        v = 2 * w() - 1,
+	        p = 2 * w() - 1;
+	        s.push({
+	            x: h,
+	            y: g,
+	            xa: v,
+	            ya: p,
+	            max: 6e3
+	        })
+	    }
+	    u = s.concat([y]),
+	    setTimeout(function() {
+	        i()
+	    },
+	    100)
+} ();
+
+
+</script>
+</html>
